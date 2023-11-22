@@ -1,21 +1,21 @@
 package dominio;
 
-public class Biblioteca implements prestable {
+import java.util.ArrayList;
+
+public class Biblioteca{
 
 	private ArrayList<MaterialBiblioteca> listaMateriales;
 
-	public ArrayList<MaterialBiblioteca> getListaRevistas() {
-		// TODO - implement Biblioteca.getListaRevistas
-		throw new UnsupportedOperationException();
+	public Biblioteca() {
+		this.listaMateriales = new ArrayList<MaterialBiblioteca>();
 	}
 
-	/**
-	 * 
-	 * @param nuevoMaterial
-	 */
+	public ArrayList<MaterialBiblioteca> getListaMateriales() {
+		return this.listaMateriales;
+	}
+
 	public void addMaterial(MaterialBiblioteca nuevoMaterial) {
-		// TODO - implement Biblioteca.addMaterial
-		throw new UnsupportedOperationException();
+		this.listaMateriales.add(nuevoMaterial);
 	}
 
 }

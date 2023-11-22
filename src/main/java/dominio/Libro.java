@@ -1,18 +1,18 @@
 package dominio;
 
-public class Libro {
+public class Libro extends MaterialBiblioteca{
 
-	private string ISBN;
-	private string edicion;
+	private String ISBN;
+	private String edicion;
 
-	/**
-	 * 
-	 * @param ISBN
-	 * @param edicion
-	 */
-	public Libro(String ISBN, String edicion) {
-		// TODO - implement Libro.Libro
-		throw new UnsupportedOperationException();
+	public String getISBN() {
+		return ISBN;
+	}
+
+	public Libro(String ISBN, String edicion, String titulo, String autor, int id) {
+		super(id, titulo, autor);
+		this.ISBN = ISBN;
+		this.edicion = edicion;
 	}
 
 }
