@@ -25,4 +25,8 @@ public class Biblioteca{
 	public void setUsuarioIngresado(Usuario usuario){
 		this.usuarioIngresado = usuario;
 	}
+
+	public Usuario getUsuarioIngresado() {
+		return usuarioIngresado;
+	}
 }
