@@ -1,8 +1,12 @@
 package dominio;
 
+import manejoUsuarios.Usuario;
+
 import java.util.ArrayList;
 
 public class Biblioteca{
+
+	private Usuario usuarioIngresado;
 
 	private ArrayList<MaterialBiblioteca> listaMateriales;
 
@@ -18,4 +22,7 @@ public class Biblioteca{
 		this.listaMateriales.add(nuevoMaterial);
 	}
 
+	public void setUsuarioIngresado(Usuario usuario){
+		this.usuarioIngresado = usuario;
+	}
 }
