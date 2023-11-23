@@ -15,7 +15,7 @@ public class GuiBiblioteca extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent event) {
         if (event.getSource().equals(prestarBtn)){
-            BibliotecaControlador.
+            //BibliotecaControlador.
         }
     }
 }

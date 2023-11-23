@@ -4,7 +4,7 @@ import manejoUsuarios.Usuario;
 
 import java.util.Scanner;
 
-public enum BibliotecaControlador {
+public enum BibliotecaControlador implements Prestable{
 
 	INSTANCE;
 
@@ -43,7 +43,6 @@ public enum BibliotecaControlador {
 		}
 
 		return null;
-
 	}
 
 	public Revista buscarRevistaISSN(String ISNN, Biblioteca biblioteca) {
@@ -61,11 +60,13 @@ public enum BibliotecaControlador {
 		return null;
 	}
 
+	@Override
 	public void prestarMaterial(MaterialBiblioteca materialPrestado, Usuario usuario) {
 		materialPrestado.setPrestado(true);
 		materialPrestado.setUsuarioAsociado(usuario);
 	}
 
+	@Override
 	public void devolverMaterial(MaterialBiblioteca materialDevuelto) {
 		materialDevuelto.setPrestado(false);
 		materialDevuelto.setUsuarioAsociado(null);
@@ -98,5 +99,4 @@ public enum BibliotecaControlador {
 		Scanner leer = new Scanner(System.in);
 		return leer;
 	}
-
 }
