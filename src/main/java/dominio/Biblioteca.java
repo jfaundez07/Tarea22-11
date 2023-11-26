@@ -24,7 +24,6 @@ public class Biblioteca{
 		for (MaterialBiblioteca material : this.listaMateriales) {
 			System.out.println(material.toString());
 		}
-
 	}
 
 	//------------------Exigencias Instrucciones------------------
@@ -66,7 +65,6 @@ public class Biblioteca{
 
 			}
 		}
-
 		return null;
 
 	}
@@ -81,7 +79,6 @@ public class Biblioteca{
 
 			}
 		}
-
 		return null;
 	}
 }

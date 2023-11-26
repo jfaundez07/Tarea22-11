@@ -27,12 +27,10 @@ public class GuiBuscar extends JFrame implements ActionListener {
     private JCheckBox issnCheckBox;
     private JButton buscarButton;
     private JButton volverButton;
-    private Usuario usuario;
 
-    public GuiBuscar(Biblioteca biblioteca, Usuario usuario) {
+    public GuiBuscar(Biblioteca biblioteca) {
         setUpGui();
         this.biblioteca = biblioteca;
-        this.usuario = usuario;
     }
 
     private void setUpGui() {
@@ -87,7 +85,7 @@ public class GuiBuscar extends JFrame implements ActionListener {
         }
 
         if(event.getSource().equals(volverButton)){
-            GuiBiblioteca guiBiblioteca = new GuiBiblioteca(biblioteca, usuario);
+            GuiBiblioteca guiBiblioteca = new GuiBiblioteca(biblioteca);
             setVisible(false);
         }
 

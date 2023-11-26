@@ -10,6 +10,8 @@ public class LogIn {
         addUsuario(new Usuario(1, "admin", "admin@biblioteca.cl", "1234"));
     }
 
+
+    //Métodos
     public void addUsuario(Usuario nuevoUsuario) {
         this.listaUsuarios.add(nuevoUsuario);
     }
@@ -22,7 +24,6 @@ public class LogIn {
         }
         return null;
     }
-
     public boolean verificarUsuario(String email, String password) {
         Usuario usuario = buscarUsuario(email);
         if (usuario != null) {

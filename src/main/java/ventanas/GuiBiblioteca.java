@@ -16,21 +16,18 @@ public class GuiBiblioteca extends JFrame implements ActionListener {
     private JButton agregarButton;
     private JLabel tituloLabel;
     private Biblioteca biblioteca;
-    private Usuario usuario;
 
-    public GuiBiblioteca(Biblioteca biblioteca, Usuario usuario) {
+    public GuiBiblioteca(Biblioteca biblioteca) {
         setUpGui();
         this.biblioteca = biblioteca;
-        this.usuario = usuario;
-
     }
 
     public void setUpGui(){
         setTitle("Biblioteca");
-        setVisible(true);
-        setContentPane(bibliotecaPanel);
         setSize(500, 400);
         setLocationRelativeTo(null);
+        setContentPane(bibliotecaPanel);
+        setVisible(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         prestarButton.addActionListener(this);
@@ -42,19 +39,19 @@ public class GuiBiblioteca extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent event) {
         if (event.getSource().equals(prestarButton)) {
-            GuiPrestamoLibro guiPrestamoLibro = new GuiPrestamoLibro(biblioteca, usuario);
+            GuiPrestamoLibro guiPrestamoLibro = new GuiPrestamoLibro(biblioteca);
             setVisible(false);
         }
         if (event.getSource().equals(agregarButton)) {
-            GuiAddMaterial guiAgregarMaterial = new GuiAddMaterial(biblioteca, usuario);
+            GuiAddMaterial guiAgregarMaterial = new GuiAddMaterial(biblioteca);
             setVisible(false);
         }
         if (event.getSource().equals(buscarButton)) {
-            GuiBuscar guiBuscar = new GuiBuscar(biblioteca, usuario);
+            GuiBuscar guiBuscar = new GuiBuscar(biblioteca);
             setVisible(false);
         }
         if (event.getSource().equals(devolverButton)) {
-            GuiDevolucionLibro guiDevolver = new GuiDevolucionLibro(biblioteca, usuario);
+            GuiDevolucionLibro guiDevolver = new GuiDevolucionLibro(biblioteca);
             setVisible(false);
         }
     }

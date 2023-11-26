@@ -31,12 +31,10 @@ public class GuiAddMaterial extends JFrame implements ActionListener{
     private JButton volverButton;
 
     private Biblioteca biblioteca;
-    private Usuario usuario;
 
-    public GuiAddMaterial(Biblioteca biblioteca, Usuario usuario) {
+    public GuiAddMaterial(Biblioteca biblioteca) {
         setUpGui();
         this.biblioteca = biblioteca;
-        this.usuario = usuario;
     }
 
     private void setUpGui() {
@@ -88,7 +86,7 @@ public class GuiAddMaterial extends JFrame implements ActionListener{
         }
 
         if(event.getSource().equals(volverButton)){
-            GuiBiblioteca guiBiblioteca = new GuiBiblioteca(biblioteca, usuario);
+            GuiBiblioteca guiBiblioteca = new GuiBiblioteca(biblioteca);
             setVisible(false);
         }
 

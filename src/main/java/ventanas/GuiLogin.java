@@ -18,22 +18,18 @@ public class GuiLogin extends JFrame implements ActionListener {
     private JButton limpiarBtn;
     private JButton entrarBtn;
 
-    public static void main(String[] args) {
-        GuiLogin guiLogin = new GuiLogin();
-    }
-
     public GuiLogin(){
-        this.add(panel);
-        setContentPane(panel);
-        asignarEventos();
-        setTitle("LOGIN");
-        setSize(400,500);
-        setLocationRelativeTo(null);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setVisible(true);
+        setUpGui();
     }
 
-    private void asignarEventos(){
+    private void setUpGui(){
+        setTitle("Login");
+        setVisible(true);
+        setContentPane(panel);
+        setSize(500, 400);
+        setLocationRelativeTo(null);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
         limpiarBtn.addActionListener(this);
         entrarBtn.addActionListener(this);
     }
@@ -46,8 +42,9 @@ public class GuiLogin extends JFrame implements ActionListener {
 
             if (login.verificarUsuario(usuarioField.getText(), passwordField.getText())) {
                 Biblioteca biblioteca = new Biblioteca();
-                GuiBiblioteca guiBiblioteca = new GuiBiblioteca(biblioteca, usuario);
+                GuiBiblioteca guiBiblioteca = new GuiBiblioteca(biblioteca);
                 this.dispose();
+
             } else {
                 JOptionPane.showMessageDialog(null, "Usuario o contraseña incorrectos");
             }

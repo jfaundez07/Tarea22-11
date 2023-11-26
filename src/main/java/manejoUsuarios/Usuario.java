@@ -11,10 +11,6 @@ public class Usuario {
 	private String password;
 	private ArrayList<MaterialBiblioteca> librosPedidos;
 
-	public String getNombre() {
-		return nombre;
-	}
-
 	public Usuario(int id, String nombre, String email, String password) {
 		this.idUsuario = id;
 		this.nombre = nombre;
@@ -27,9 +23,10 @@ public class Usuario {
 	public int getIdUsuario() {
 		return idUsuario;
 	}
-	public String getNombreUsuario() {
+	public String getNombre() {
 		return nombre;
 	}
+
 	public String getEmail() {
 		return email;
 	}
@@ -41,7 +38,7 @@ public class Usuario {
 	}
 
 
-	//metodos
+	//Metodos
 	public void pedirMaterial(MaterialBiblioteca material) {
 		librosPedidos.add(material);
 	}

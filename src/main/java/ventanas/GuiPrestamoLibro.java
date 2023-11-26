@@ -17,12 +17,10 @@ public class GuiPrestamoLibro extends JFrame implements ActionListener {
     private JButton prestarButton;
     private JButton volverButton;
     private Biblioteca biblioteca;
-    private Usuario usuario;
 
-    public GuiPrestamoLibro(Biblioteca biblioteca, Usuario usuario) {
+    public GuiPrestamoLibro(Biblioteca biblioteca) {
         setUpGui();
         this.biblioteca = biblioteca;
-        this.usuario = usuario;
     }
 
     private void setUpGui() {
@@ -64,7 +62,7 @@ public class GuiPrestamoLibro extends JFrame implements ActionListener {
         }
 
         if (e.getSource() == volverButton) {
-            new GuiBiblioteca(biblioteca, usuario);
+            new GuiBiblioteca(biblioteca);
             dispose();
         }
 

@@ -19,7 +19,7 @@ public class GuiDevolucionLibro extends JFrame implements ActionListener {
     private Biblioteca biblioteca;
     private Usuario usuario;
 
-    public GuiDevolucionLibro(Biblioteca biblioteca, Usuario usuario) {
+    public GuiDevolucionLibro(Biblioteca biblioteca) {
         setUpGui();
         this.biblioteca = biblioteca;
     }
@@ -60,7 +60,7 @@ public class GuiDevolucionLibro extends JFrame implements ActionListener {
         }
 
         if (e.getSource() == Volver) {
-            GuiBiblioteca guiBiblioteca = new GuiBiblioteca(biblioteca, usuario);
+            GuiBiblioteca guiBiblioteca = new GuiBiblioteca(biblioteca);
             setVisible(false);
         }
 
