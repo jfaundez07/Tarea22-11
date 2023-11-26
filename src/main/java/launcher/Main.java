@@ -8,4 +8,7 @@ public class Main {
     public static void main(String[] args) {
         GuiLogin guiLogin = new GuiLogin();
     }
+
+    //email: admin@biblioteca.cl
+    //pasw: 1234
 }
