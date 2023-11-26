@@ -57,16 +57,21 @@ public class GuiBuscar extends JFrame implements ActionListener {
             if (tituloCheckBox.isSelected()) {
                 String titulo = tituloFormattedTextField.getText();
                 ArrayList<MaterialBiblioteca> materialesEncontrados = biblioteca.buscarTitulo(titulo);
-                for (MaterialBiblioteca material : materialesEncontrados) {
-                    JOptionPane.showMessageDialog(null, material.toString());
+                if (materialesEncontrados.isEmpty()) {
+                    JOptionPane.showMessageDialog(null, "No se encontraron materiales");
+                } else {
+                    SwingUtilities.invokeLater(() -> new ArrayListGUI(materialesEncontrados));
                 }
                 limpiarTecxfields();
             }
             if (autorCheckBox.isSelected()) {
                 String autor = autorFormattedTextField.getText();
                 ArrayList<MaterialBiblioteca> materialesEncontrados = biblioteca.buscarAutor(autor);
-                for (MaterialBiblioteca material : materialesEncontrados) {
-                    JOptionPane.showMessageDialog(null, material.toString());
+
+                if (materialesEncontrados.isEmpty()) {
+                    JOptionPane.showMessageDialog(null, "No se encontraron materiales");
+                } else {
+                    SwingUtilities.invokeLater(() -> new ArrayListGUI(materialesEncontrados));
                 }
                 limpiarTecxfields();
             }
@@ -97,4 +102,6 @@ public class GuiBuscar extends JFrame implements ActionListener {
         isbnFormattedTextField.setText("");
         issnFormattedTextField.setText("");
     }
+
+
 }
