@@ -3,4 +3,7 @@
 ## Integrantes:
 -Joaquin Faundez   
 -Javier Alcalde  
--Christian Gajardo![Class Diagram1.png](..%2F..%2F.config%2FVisualParadigm%2Fws%2FVPProjects%2FClass%20Diagram1.png)
+-Christian Gajardo
+  
+![Captura desde 2023-11-23 10-24-20.png](Captura%20desde%202023-11-23%2010-24-20.png)
+![Captura desde 2023-11-23 10-24-29.png](Captura%20desde%202023-11-23%2010-24-29.png)
