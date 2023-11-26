@@ -3,6 +3,7 @@ package ventanas;
 import dominio.Biblioteca;
 import dominio.Libro;
 import dominio.Revista;
+import manejoUsuarios.Usuario;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -30,19 +31,22 @@ public class GuiAddMaterial extends JFrame implements ActionListener{
     private JButton volverButton;
 
     private Biblioteca biblioteca;
+    private Usuario usuario;
 
-    public GuiAddMaterial(Biblioteca biblioteca) {
+    public GuiAddMaterial(Biblioteca biblioteca, Usuario usuario) {
         setUpGui();
         this.biblioteca = biblioteca;
+        this.usuario = usuario;
     }
 
     private void setUpGui() {
         setTitle("Agregar Material");
-        setLocationRelativeTo(null);
         setVisible(true);
         setContentPane(addMaterialPanel);
         setSize(800, 600);
+        setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
         agregarButton.addActionListener(this);
         libroCheckBox.addActionListener(this);
         revistaCheckBox.addActionListener(this);
@@ -84,8 +88,16 @@ public class GuiAddMaterial extends JFrame implements ActionListener{
         }
 
         if(event.getSource().equals(volverButton)){
-            GuiBiblioteca guiBiblioteca = new GuiBiblioteca(biblioteca);
+            GuiBiblioteca guiBiblioteca = new GuiBiblioteca(biblioteca, usuario);
             setVisible(false);
+        }
+
+        if(event.getSource().equals(libroCheckBox)){
+            revistaCheckBox.setSelected(false);
+        }
+
+        if(event.getSource().equals(revistaCheckBox)){
+            libroCheckBox.setSelected(false);
         }
     }
 

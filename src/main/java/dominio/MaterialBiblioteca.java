@@ -6,11 +6,13 @@ public abstract class MaterialBiblioteca implements prestable {
 
 	protected String id;
 	protected boolean prestado;
+	protected Usuario usuario;
 	protected String titulo;
 	protected String autor;
 
 	public MaterialBiblioteca(String id, String titulo, String autor) {
 		this.prestado = false;
+		this.usuario = null;
 		this.id = id;
 		this.titulo = titulo;
 		this.autor = autor;
@@ -34,6 +36,9 @@ public abstract class MaterialBiblioteca implements prestable {
 
 	@Override
 	public void prestar() {
+		if (prestado) {
+			throw new RuntimeException("El material ya está prestado");
+		}
 		prestado = true;
 	}
 
@@ -47,6 +52,7 @@ public abstract class MaterialBiblioteca implements prestable {
 		return "MaterialBiblioteca{" +
 				"id=" + id +
 				", prestado=" + prestado +
+				", usuario=" + usuario +
 				", titulo='" + titulo + '\'' +
 				", autor='" + autor + '\'' +
 				'}';

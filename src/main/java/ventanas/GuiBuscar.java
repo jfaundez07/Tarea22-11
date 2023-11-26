@@ -2,6 +2,7 @@ package ventanas;
 
 import dominio.Biblioteca;
 import dominio.MaterialBiblioteca;
+import manejoUsuarios.Usuario;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -26,19 +27,22 @@ public class GuiBuscar extends JFrame implements ActionListener {
     private JCheckBox issnCheckBox;
     private JButton buscarButton;
     private JButton volverButton;
+    private Usuario usuario;
 
-    public GuiBuscar(Biblioteca biblioteca) {
+    public GuiBuscar(Biblioteca biblioteca, Usuario usuario) {
         setUpGui();
         this.biblioteca = biblioteca;
+        this.usuario = usuario;
     }
 
     private void setUpGui() {
         setTitle("Buscar Material");
-        setLocationRelativeTo(null);
         setVisible(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setContentPane(buscarPanel);
         setSize(800, 600);
+        setLocationRelativeTo(null);
+
         buscarButton.addActionListener(this);
         tituloCheckBox.addActionListener(this);
         autorCheckBox.addActionListener(this);
@@ -68,11 +72,13 @@ public class GuiBuscar extends JFrame implements ActionListener {
                 }
                 limpiarTecxfields();
             }
+
             if (isbnCheckBox.isSelected()) {
                 String isbn = isbnFormattedTextField.getText();
                 JOptionPane.showMessageDialog(null, biblioteca.buscarLibroISBN(isbn));
                 limpiarTecxfields();
             }
+
             if (issnCheckBox.isSelected()) {
                 String issn = issnFormattedTextField.getText();
                 JOptionPane.showMessageDialog(null, biblioteca.buscarRevistaISSN(issn));
@@ -81,9 +87,10 @@ public class GuiBuscar extends JFrame implements ActionListener {
         }
 
         if(event.getSource().equals(volverButton)){
-            GuiBiblioteca guiBiblioteca = new GuiBiblioteca(biblioteca);
+            GuiBiblioteca guiBiblioteca = new GuiBiblioteca(biblioteca, usuario);
             setVisible(false);
         }
+
     }
 
     private void limpiarTecxfields(){
