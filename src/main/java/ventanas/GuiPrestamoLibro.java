@@ -1,4 +1,12 @@
 package ventanas;
 
-public class GuiPrestamoLibro {
+import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class GuiPrestamoLibro extends JFrame implements ActionListener {
+    @Override
+    public void actionPerformed(ActionEvent e) {
+
+    }
 }

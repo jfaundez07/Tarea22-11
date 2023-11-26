@@ -1,18 +1,22 @@
 package dominio;
 
-public class Revista {
+public class Revista extends MaterialBiblioteca{
 
 	private String ISSN;
-	private int numero;
+	private String numero;
 
-	/**
-	 * 
-	 * @param ISSN
-	 * @param numero
-	 */
-	public Revista(String ISSN, int numero) {
-		// TODO - implement Revista.Revista
-		throw new UnsupportedOperationException();
+	public String getISSN() {
+		return ISSN;
+	}
+
+	public String getNumero() {
+		return numero;
+	}
+
+	public Revista(String id, String titulo, String autor, String ISSN, String numero) {
+		super(id, titulo, autor);
+		this.ISSN = ISSN;
+		this.numero = numero;
 	}
 
 }
