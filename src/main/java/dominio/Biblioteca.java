@@ -29,26 +29,30 @@ public class Biblioteca{
 
 	//------------------Exigencias Instrucciones------------------
 
-	public MaterialBiblioteca buscarTitulo(String titulo, Biblioteca biblioteca) {
+	public ArrayList<MaterialBiblioteca> buscarTitulo(String titulo) {
+
+		ArrayList<MaterialBiblioteca> temporal = new ArrayList<MaterialBiblioteca>();
 
 		for (MaterialBiblioteca material : this.listaMateriales) {
 			if (material.getTitulo().equals(titulo)) {
-				return material;
+				temporal.add(material);
 			}
 		}
 
-		return null;
+		return temporal;
 	}
 
-	public MaterialBiblioteca buscarAutor(String autor, Biblioteca biblioteca) {
+	public ArrayList<MaterialBiblioteca> buscarAutor(String autor) {
+
+		ArrayList<MaterialBiblioteca> temporal = new ArrayList<MaterialBiblioteca>();
 
 		for (MaterialBiblioteca material : this.listaMateriales) {
 			if (material.getAutor().equals(autor)) {
-				return material;
+				temporal.add(material);
 			}
 		}
 
-		return null;
+		return temporal;
 	}
 
 	public Libro buscarLibroISBN(String ISBN) {

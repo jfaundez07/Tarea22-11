@@ -7,7 +7,6 @@ import dominio.Revista;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.ItemListener;
 
 public class GuiAddMaterial extends JFrame implements ActionListener{
     private JPanel addMaterialPanel;
@@ -28,6 +27,7 @@ public class GuiAddMaterial extends JFrame implements ActionListener{
     private JCheckBox revistaCheckBox;
     private JLabel libroLabel;
     private JLabel revistaLabel;
+    private JButton volverButton;
 
     private Biblioteca biblioteca;
 
@@ -46,6 +46,7 @@ public class GuiAddMaterial extends JFrame implements ActionListener{
         agregarButton.addActionListener(this);
         libroCheckBox.addActionListener(this);
         revistaCheckBox.addActionListener(this);
+        volverButton.addActionListener(this);
 
     }
 
@@ -64,6 +65,7 @@ public class GuiAddMaterial extends JFrame implements ActionListener{
                 Libro nuevoLibro = new Libro(newId,titulo,autor,isbn,edicion);
                 biblioteca.addMaterial(nuevoLibro);
                 JOptionPane.showMessageDialog(null,"Libro agregado correctamente");
+                limpiarTecxfields();
                 biblioteca.mostrarTodo();
             }
 
@@ -76,9 +78,24 @@ public class GuiAddMaterial extends JFrame implements ActionListener{
                 Revista nuevaRevista = new Revista(newId,titulo,autor,issn,numero);
                 biblioteca.addMaterial(nuevaRevista);
                 JOptionPane.showMessageDialog(null,"Revista agregada correctamente");
+                limpiarTecxfields();
                 biblioteca.mostrarTodo();
             }
         }
+
+        if(event.getSource().equals(volverButton)){
+            GuiBiblioteca guiBiblioteca = new GuiBiblioteca(biblioteca);
+            setVisible(false);
+        }
+    }
+
+    private void limpiarTecxfields(){
+        tituloTextField.setText("");
+        autorTextField.setText("");
+        isbnTextField.setText("");
+        edicionTextField.setText("");
+        issnFormattedTextField.setText("");
+        numeroTextField.setText("");
     }
 
 }

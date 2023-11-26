@@ -27,7 +27,7 @@ public class GuiBiblioteca extends JFrame implements ActionListener {
         setLocationRelativeTo(null);
         setVisible(true);
         setContentPane(bibliotecaPanel);
-        setSize(800, 600);
+        setSize(500, 400);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         prestarButton.addActionListener(this);
@@ -47,8 +47,8 @@ public class GuiBiblioteca extends JFrame implements ActionListener {
             setVisible(false);
         }
         if (event.getSource().equals(buscarButton)) {
-            //GuiBuscarMaterial guiBuscarMaterial = new GuiBuscarMaterial(biblioteca);
-            //guiBuscarMaterial.setUpGui();
+            GuiBuscar guiBuscar = new GuiBuscar(biblioteca);
+            setVisible(false);
         }
         if (event.getSource().equals(devolverButton)) {
             //GuiDevolverMaterial guiDevolverMaterial = new GuiDevolverMaterial(biblioteca);
