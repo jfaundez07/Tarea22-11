@@ -50,28 +50,32 @@ public class GuiAddMaterial extends JFrame implements ActionListener{
     }
 
 
-
     @Override
     public void actionPerformed(ActionEvent event) {
+
         if(event.getSource().equals(agregarButton)){
+
             if(libroCheckBox.isSelected()){
-                String newId = "" + biblioteca.getListaMateriales().size() + 1;
+                String newId = String.valueOf(biblioteca.getListaMateriales().size() + 1);
                 String titulo = tituloTextField.getText();
                 String autor = autorTextField.getText();
                 String isbn = isbnTextField.getText();
                 String edicion = edicionTextField.getText();
                 Libro nuevoLibro = new Libro(newId,titulo,autor,isbn,edicion);
                 biblioteca.addMaterial(nuevoLibro);
+                JOptionPane.showMessageDialog(null,"Libro agregado correctamente");
                 biblioteca.mostrarTodo();
             }
+
             if(revistaCheckBox.isSelected()){
-                String newId = "" + biblioteca.getListaMateriales().size() + 1;
+                String newId = String.valueOf(biblioteca.getListaMateriales().size() + 1);
                 String titulo = tituloTextField.getText();
                 String autor = autorTextField.getText();
                 String issn = issnFormattedTextField.getText();
                 String numero = numeroTextField.getText();
                 Revista nuevaRevista = new Revista(newId,titulo,autor,issn,numero);
                 biblioteca.addMaterial(nuevaRevista);
+                JOptionPane.showMessageDialog(null,"Revista agregada correctamente");
                 biblioteca.mostrarTodo();
             }
         }
