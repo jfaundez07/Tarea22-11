@@ -19,12 +19,15 @@ class BibliotecaTest {
         libro1 = new Libro("1", "El señor de los anillos", "J.R.R Tolkien", "123456789", "1");
         libro2 = new Libro("2", "El señor de los anillos", "J.R.R Tolkien", "223456789", "2");
         libro3 = new Libro("3", "El señor de los anillos", "J.R.R Tolkien", "323456789", "3");
+
         revista1 = new Revista("4", "El señor de los anillos", "J.R.R Tolkien", "123456789", "1");
         revista2 = new Revista("5", "El señor de los anillos", "J.R.R Tolkien", "223456789", "2");
         revista3 = new Revista("6", "El señor de los anillos", "J.R.R Tolkien", "323456789", "3");
+
         biblioteca.addMaterial(libro1);
         biblioteca.addMaterial(libro2);
         biblioteca.addMaterial(libro3);
+
         biblioteca.addMaterial(revista1);
         biblioteca.addMaterial(revista2);
         biblioteca.addMaterial(revista3);
