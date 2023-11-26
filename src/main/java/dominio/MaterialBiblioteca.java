@@ -2,13 +2,19 @@ package dominio;
 
 import manejoUsuarios.*;
 
-public abstract class MaterialBiblioteca {
+public abstract class MaterialBiblioteca implements prestable {
 
-	protected int id;
+	protected String id;
 	protected boolean prestado;
 	protected String titulo;
 	protected String autor;
-	protected Usuario usuarioAsociado;
+
+	public MaterialBiblioteca(String id, String titulo, String autor) {
+		this.prestado = false;
+		this.id = id;
+		this.titulo = titulo;
+		this.autor = autor;
+	}
 
 	public String getTitulo() {
 		return titulo;
@@ -18,19 +24,31 @@ public abstract class MaterialBiblioteca {
 		return autor;
 	}
 
-	public void setPrestado(boolean prestado) {
-		this.prestado = prestado;
+	public String getId() {
+		return id;
 	}
 
-	public void setUsuarioAsociado(Usuario usuarioAsociado) {
-		this.usuarioAsociado = usuarioAsociado;
+	public boolean isPrestado() {
+		return prestado;
 	}
 
-	public MaterialBiblioteca(int id, String titulo, String autor) {
-		this.prestado = false;
-		this.id = id;
-		this.titulo = titulo;
-		this.autor = autor;
+	@Override
+	public void prestar() {
+		prestado = true;
 	}
 
+	@Override
+	public void devolver() {
+		prestado = false;
+	}
+
+	@Override
+	public String toString() {
+		return "MaterialBiblioteca{" +
+				"id=" + id +
+				", prestado=" + prestado +
+				", titulo='" + titulo + '\'' +
+				", autor='" + autor + '\'' +
+				'}';
+	}
 }

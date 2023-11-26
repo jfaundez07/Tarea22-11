@@ -3,13 +3,17 @@ package dominio;
 public class Revista extends MaterialBiblioteca{
 
 	private String ISSN;
-	private int numero;
+	private String numero;
 
 	public String getISSN() {
 		return ISSN;
 	}
 
-	public Revista(String ISSN, int numero, String titulo, String autor, int id) {
+	public String getNumero() {
+		return numero;
+	}
+
+	public Revista(String id, String titulo, String autor, String ISSN, String numero) {
 		super(id, titulo, autor);
 		this.ISSN = ISSN;
 		this.numero = numero;

@@ -9,10 +9,16 @@ public class Libro extends MaterialBiblioteca{
 		return ISBN;
 	}
 
-	public Libro(String ISBN, String edicion, String titulo, String autor, int id) {
+	public String getEdicion() {
+		return edicion;
+	}
+
+	public Libro(String id,String titulo, String autor, String ISBN, String edicion) {
 		super(id, titulo, autor);
 		this.ISBN = ISBN;
 		this.edicion = edicion;
 	}
+
+
 
 }
