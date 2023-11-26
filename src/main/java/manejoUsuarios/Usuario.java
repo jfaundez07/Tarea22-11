@@ -16,7 +16,6 @@ public class Usuario {
 		this.nombre = nombre;
 		this.email = email;
 		this.password = password;
-		this.librosPedidos = new ArrayList<>();
 	}
 
 	//getters y setters
@@ -33,17 +32,5 @@ public class Usuario {
 	public String getPassword() {
 		return password;
 	}
-	public ArrayList<MaterialBiblioteca> getLibrosPedidos() {
-		return librosPedidos;
-	}
 
-
-	//Metodos
-	public void pedirMaterial(MaterialBiblioteca material) {
-		librosPedidos.add(material);
-	}
-
-	public void devolverMaterial(MaterialBiblioteca material) {
-		librosPedidos.remove(material);
-	}
 }
